@@ -1,0 +1,37 @@
+{
+  "name": "HunlarBot",
+  "description": "Telegram kanal postlarını botun dahil olduğu tüm gruplara ileten Telethon botu",
+  "repository": "https://github.com/Hunlar/HunlarBot",
+  "logo": "https://www.herokucdn.com/favicon.ico",
+  "keywords": ["telegram", "bot", "telethon", "heroku", "hunlar"],
+  "env": {
+    "API_ID": {
+      "description": "Telegram API ID (my.telegram.org'dan alınır)",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API Hash (my.telegram.org'dan alınır)",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token (BotFather'dan alınır)",
+      "required": true
+    },
+    "SOURCE_CHANNEL": {
+      "description": "Mesajları takip edilecek kanal (örneğin @HunlarBirligi)",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "heroku-22"
+}
